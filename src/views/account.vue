@@ -1,0 +1,98 @@
+<template>
+<div class="content clear">
+    <div class="account-wrapper">
+      <div class="account-sidebar">
+        <div class="avatar gray-box clear">
+          <div class="js-account-sidebar-info">
+            <img src="http://static.smartisanos.cn/account/asset/img/default-user-avatar.png">
+          </div>
+          <div class="box-inner">
+            <ul class="account-nav">
+              <router-link :to="{'name': 'Account'}" exact tag="li" activeClass="current"><a>我的订单</a></router-link>
+              <router-link :to="{'name': 'Address'}" tag="li" activeClass="current"><a>收货地址</a></router-link>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <router-view></router-view>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'order'
+}
+</script>
+
+<style scoped>
+  .content{
+    clear: both;
+    width: 1220px;
+    min-height: 600px;
+    padding: 0 0 25px;
+    margin: 0 auto;
+  }
+  .account-wrapper{
+    position: relative;
+    min-height: 550px;
+  }
+  .account-sidebar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210px;
+  }
+  .gray-box, .gray-btn-menu-on:hover{
+    background: #FFF;
+  }
+  .gray-box{
+    overflow: hidden;
+    border: 1px solid #D1D1D1;
+    border-color: rgba(0,0,0,.14);
+    border-radius: 8px;
+    box-shadow: 0 3px 8px -6px rgba(0,0,0,.1);
+  }
+  .account-sidebar .avatar{
+    padding-top: 20px;
+    margin: 0 0 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .account-sidebar .avatar img{
+    width: 168px;
+    height: 168px;
+    display: inline-block;
+  }
+  .account-sidebar .account-nav{
+    padding-top: 15px;
+  }
+  .account-sidebar .account-nav li{
+    position: relative;
+    height: 48px;
+    border-top: 1px solid #EBEBEB;
+    line-height: 48px;
+  }
+  .account-sidebar .account-nav .current{
+    border: none;
+  }
+  .account-sidebar .account-nav a{
+    display: block;
+    height: 48px;
+    padding: 0 30px;
+    color: #666;
+    -moz-transition: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .account-sidebar .account-nav .current a, .account-sidebar .account-nav a:hover{
+    position: relative;
+    top: -1px;
+    z-index: 1;
+    height: 50px;
+    background-color: #98AFEE;
+    line-height: 50px;
+    color: #FFF;
+  }
+
+</style>
